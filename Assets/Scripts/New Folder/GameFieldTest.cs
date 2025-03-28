@@ -10,9 +10,12 @@ public class GameFieldTests
     private GameObject gameFieldObject;
     private GameField gameField;
 
+    
     [SetUp]
     public void SetUp()
     {
+        GameObject gameFieldObj = new GameObject("GameField");
+        gameField = gameFieldObj.AddComponent<GameField>();
         // Создаем объект с компонентом GameField
         gameFieldObject = new GameObject("GameField");
         gameFieldObject.AddComponent<RectTransform>();

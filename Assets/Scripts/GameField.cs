@@ -23,7 +23,7 @@ public class GameField : MonoBehaviour
     {
         InputManager.OnMove -= ProcessMove;
     }
-
+    
     private void Start()
     {
 
@@ -55,6 +55,7 @@ public class GameField : MonoBehaviour
         }
         SaveManager.SaveGame(data);
     }
+    
 
     public Vector2Int GetEmptyPosition()
     {
