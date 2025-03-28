@@ -18,6 +18,7 @@ public class CellView : MonoBehaviour
         UpdatePosition(cell);
         linkedCell.OnValueChanged.AddListener(UpdateValue);
         linkedCell.OnPositionChanged.AddListener(UpdatePosition);
+        linkedCell.Destroy.AddListener(Delete);
     }
 
     private void UpdateValue(Cell cell)
@@ -34,11 +35,12 @@ public class CellView : MonoBehaviour
         img.color = Color.Lerp(startColor, endColor, t);
     }
 
-
+    private void Delete(Cell cell)
+    {
+        Destroy(this.gameObject);
+    }
     private void UpdatePosition(Cell cell)
     {
-
-
         transform.localPosition = new Vector2(
             cell.Position.x  * 200 + 15,
             cell.Position.y  * 200 + 15
